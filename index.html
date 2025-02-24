@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coupon App - Business & VIP Deals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: #f8f9fa;
+      padding: 50px 20px;
+    }
+
+    .form-container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <h1>Welcome to the Coupon App</h1>
+    <p>Businesses advertise. Users save. VIP members get exclusive deals.</p>
+    <a href="#signup" class="btn">Get Early Access</a>
+  </div>
+
+  <div class="container">
+    <h2>How It Works</h2>
+    <p>Businesses can sign up to post their coupons, and users can browse for deals. VIP members get exclusive discounts.</p>
+  </div>
+
+  <div class="container form-container" id="signup">
+    <h2>Business Signup</h2>
+    <form>
+      <input type="text" placeholder="Business Name" required><br><br>
+      <input type="email" placeholder="Business Email" required><br><br>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+  </div>
+
+  <div class="container form-container">
+    <h2>Get Notified for VIP Deals</h2>
+    <form>
+      <input type="email" placeholder="Your Email" required><br><br>
+      <button type="submit" class="btn">Notify Me</button>
+    </form>
+  </div>
+</body>
+
+</html>

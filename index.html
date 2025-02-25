@@ -8,21 +8,132 @@
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
+    :root {
+      --hero-bg-color: #fafafa;
+      /* Off-white */
+      --primary-color: #4a90e2;
+      /* Soft blue */
+      --primary-hover-color: #357abd;
+      /* Darker blue */
+      --text-color: #333333;
+      /* Dark gray */
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+    }
+
     .hero {
-      background: #f8f9fa;
-      padding: 100px 20px;
+      background: var(--hero-bg-color);
+      color: var(--text-color);
+      padding: 80px 20px;
+      /* Adjusted padding for mobile */
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      /* Adjusted font size for mobile */
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      /* Adjusted font size for mobile */
     }
 
     .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      color: white;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      padding: 10px 20px;
+      /* Larger padding for touch-friendly buttons */
+      font-size: 1rem;
+      /* Adjusted font size for mobile */
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover-color);
+      border-color: var(--primary-hover-color);
+    }
+
+    .btn-primary:focus {
+      box-shadow: 0 0 0 0.25rem rgba(74, 144, 226, 0.5);
+      /* Soft blue with opacity */
+    }
+
+    .card {
+      background: white;
+      border: none;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 1s ease-in-out;
+      margin-bottom: 20px;
+      /* Added margin for better spacing on mobile */
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #343a40;
+      color: white;
+      padding: 20px 0;
+      /* Adjusted padding for mobile */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 767.98px) {
+      .hero h1 {
+        font-size: 2rem;
+        /* Smaller font size for very small screens */
+      }
+
+      .hero p {
+        font-size: 1rem;
+        /* Smaller font size for very small screens */
+      }
+
+      .btn-primary {
+        width: 100%;
+        /* Full-width buttons for easier tapping */
+      }
+
+      .card {
+        margin-bottom: 15px;
+        /* Reduced margin for very small screens */
+      }
     }
   </style>
 </head>
 
-
 <body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">AdVantage</a>
@@ -40,26 +151,26 @@
     </div>
   </nav>
 
-
+  <!-- Hero Section -->
   <div class="container-fluid text-center hero">
     <h1 class="display-4 fw-bold">Welcome to AdVantage</h1>
     <p class="lead">Businesses advertise. Users save. VIP members get exclusive deals.</p>
     <a href="#signup" class="btn btn-primary btn-lg">Get Early Access</a>
   </div>
 
-
+  <!-- How It Works Section -->
   <div class="container text-center my-5" id='how-it-works'>
-    <h2>How It Works</h2>
+    <h2><i class="fas fa-cogs"></i> How It Works</h2>
     <p class="text-muted">Businesses can sign up to post their coupons, and users can browse for deals. VIP members get exclusive discounts.</p>
   </div>
 
-
+  <!-- Signup and VIP Deals Section -->
   <div class="container my-5">
     <div class="row">
       <div class="col-md-6 mb-4" id='signup'>
         <div class="card p-4 shadow">
           <h2>Business Signup</h2>
-          <form action="https://formspree.io/f/xnnjywzg" method="POST">
+          <form action="https://formspree.io/f/xanqgbyv" method="POST">
             <input type="text" name="business_name" class="form-control mb-3" placeholder="Business Name" required>
             <input type="email" name="email" class="form-control mb-3" placeholder="Business Email" required>
             <button type="submit" class="btn btn-primary">Sign Up</button>
@@ -69,7 +180,7 @@
       <div class="col-md-6" id='vip-deals'>
         <div class="card p-4 shadow">
           <h2>Get Notified for VIP Deals</h2>
-          <form action="https://formspree.io/f/mjkgdlop" method="POST">
+          <form action="https://formspree.io/f/xdkardoy" method="POST">
             <input type="text" name='firstName' class="form-control mb-3" placeholder="First Name">
             <input type="text" name='lastName' class="form-control mb-3" placeholder="Last Name">
             <input type="email" name="email" class="form-control mb-3" placeholder="Your Email" required>
@@ -80,6 +191,102 @@
     </div>
   </div>
 
+  <!-- Benefits Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4"><i class="fas fa-star"></i> Why Choose AdVantage?</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card p-4 shadow text-center">
+          <i class="fas fa-chart-line fa-3x mb-3" style="color: var(--primary-color);"></i>
+          <h3>Grow Your Business</h3>
+          <p class="text-muted">Reach new customers and increase sales by advertising your deals on AdVantage.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card p-4 shadow text-center">
+          <i class="fas fa-wallet fa-3x mb-3" style="color: var(--primary-color);"></i>
+          <h3>Save Money</h3>
+          <p class="text-muted">Discover exclusive discounts and save money with VIP deals.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card p-4 shadow text-center">
+          <i class="fas fa-users fa-3x mb-3" style="color: var(--primary-color);"></i>
+          <h3>Exclusive Access</h3>
+          <p class="text-muted">VIP members get access to deals that are not available to the general public.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call-to-Action Section -->
+  <div class="container-fluid bg-light py-5 text-center">
+    <h2 class="fw-bold">Ready to Get Started?</h2>
+    <p class="lead">Join AdVantage today and start saving or growing your business.</p>
+    <a href="#signup" class="btn btn-primary btn-lg">Sign Up Now</a>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            How do I sign up as a business?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Simply fill out the business signup form on this page, and we'll get in touch with you!
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            What are VIP deals?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            VIP deals are exclusive discounts available only to AdVantage VIP members.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>About AdVantage</h5>
+          <p class="text-muted">AdVantage connects businesses with users to offer exclusive deals and VIP discounts.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="#how-it-works" class="text-white text-decoration-none">How It Works</a></li>
+            <li><a href="#signup" class="text-white text-decoration-none">For Businesses</a></li>
+            <li><a href="#vip-deals" class="text-white text-decoration-none">VIP Deals</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="mailto:info@advantage.com" class="text-white text-decoration-none">info@advantage.com</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="bg-light">
+      <p class="text-center mb-0">&copy; 2025 AdVantage. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 
 </html>
